@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Documenta&ccedil;&atilde;o AVA</title>
+
+    <!-- Material Design Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.css" rel="stylesheet">
+	
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<link type="text/css" rel="stylesheet" href="css/sh_style.css">
+	
+</head>
+
+<body>
+	<nav class="navbar unique-color">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand waves-effect waves-light" href="javascript:go('introducao');">Documenta&ccedil;&atilde;o</a>
+			</div>
+
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+				<ul class="nav navbar-nav">
+					<li class="active" id="introducao"><a href="javascript:go('introducao');" class="waves-effect waves-light">Introdu&ccedil;&atilde;o <span class="sr-only">(current)</span></a></li>
+					<!--<li><a href="javascript:go('botoes');" class="waves-effect waves-light">SVN</a></li>-->
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" role="button" aria-expanded="false">SVN<span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+							<li id="svn_configuracao"><a href="javascript:go('svn_configuracao');">Configura&ccedil;&atilde;o das pastas</a></li>
+							<li id="svn_nomenclatura"><a href="javascript:go('svn_nomenclatura');">Nomenclatura padr&atilde;o dos arquivos</a></li>
+							<li id="svn_criando"><a href="javascript:go('svn_criando');">Criando os arquivos</a></li>
+							<li id="svn_modificando"><a href="javascript:go('svn_modificando');">Modificando os arquivos</a></li>
+							<li id="svn_excluindo"><a href="javascript:go('svn_excluindo');">Excluindo/renomeando os arquivos</a></li>
+							<li class="divider"></li>
+							<li id="svn_senha"><a href="javascript:go('svn_senha');">Alterando a senha</a></li>
+							<li class="divider"></li>
+							<li id="svn_problemas"><a href="javascript:go('svn_problemas');">Resolvendo problemas comuns</a></li>
+							<li class="divider"></li>
+							<li id="svn_links"><a href="javascript:go('svn_links');">Endere&ccedil;os dos projetos</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" role="button" aria-expanded="false">Geral<span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+							<li id="geral_padroes_gerais"><a href="javascript:go('geral_padroes_gerais');">Padr&otilde;es gerais</a></li>
+							<li id="geral_tabelas"><a href="javascript:go('geral_tabelas');">Tabelas</a></li>
+							<li id="geral_fluxogramas"><a href="javascript:go('geral_fluxogramas');">Fluxogramas</a></li>
+							<li id="geral_formulas"><a href="javascript:go('geral_formulas');">F&oacute;rmulas</a></li>
+							<li class="divider"></li>
+							<li id="geral_cores"><a href="javascript:go('geral_cores');">Cores dos cursos</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" role="button" aria-expanded="false">Anima&ccedil;&otilde;es<span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+							<li id="edge_geral"><a href="javascript:go('edge_geral');">Padr&otilde;es gerais de anima&ccedil;&otilde;es</a></li>
+							<li id="edge_botoes"><a href="javascript:go('edge_botoes');">Bot&otilde;es</a></li>
+							<li id="edge_cards"><a href="javascript:go('edge_cards');">Cards (caixa de texto, de conteúdo, etc)</a></li>
+							<li id="edge_dialogo"><a href="javascript:go('edge_dialogo');">Caixa de di&aacute;logo</a></li>
+							<li id="edge_abas"><a href="javascript:go('edge_abas');">Caixa com abas</a></li>
+							<li id="edge_passo_a_passo"><a href="javascript:go('edge_passo_a_passo');">Sequência com passo a passo</a></li>
+							<li class="divider"></li>
+							<li id="edge_inicio_final"><a href="javascript:go('edge_inicio_final');">Início e final das animações</a></li>
+							<li class="divider"></li>
+							<li id="edge_download"><a href="javascript:go('edge_download');">Download dos componentes</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" role="button" aria-expanded="false">SAs<span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+							<li id="edge_geral"><a href="javascript:go('SA_PS');">Padr&otilde;es <i>Photoshop</i></a></li>
+							<li id="edge_geral"><a href="javascript:go('SA_AI');">Padr&otilde;es <i>Illustrator</i></a></li>
+							<li id="edge_geral"><a href="javascript:go('SA_geral');">Padr&otilde;es <i>Edge</i></a></li>
+							<li class="divider"></li>
+							<li id="edge_download"><a href="javascript:go('SA_download');">Download dos componentes</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" role="button" aria-expanded="false">Webdesign<span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+							<li id="web_introducao"><a href="javascript:go('web_introducao');">Introdução</a></li>
+							<li id="web_geral"><a href="javascript:go('web_geral');">Orientações gerais</a></li>
+							<li id="web_html"><a href="javascript:go('web_html');">HTML 5 - Estrutura básica</a></li>
+							<li id="web_projeto_pnead"><a href="javascript:go('web_projeto_pnead');">Projeto PN-EAD</a></li>
+							<li id="web_recomendacoes"><a href="javascript:go('web_recomendacoes');">Recomendações de disposição de conteúdo</a></li>
+							<li id="web_recursos"><a href="javascript:go('web_recursos');">Recursos - Objetos multimídia</a></li>
+							<li id="web_exercicios"><a href="javascript:go('web_exercicios');">Exercícios de fixação/Colocando em prática</a></li>
+							<li id="web_feedbacks"><a href="javascript:go('web_feedbacks');">Feedbacks dos exercícios de fixação</a></li>
+							<li id="web_creditos"><a href="javascript:go('web_creditos');">Créditos finais</a></li>
+							<li id="web_configuracao"><a href="javascript:go('web_configuracao');">Configurações mínimas para visualização dos cursos</a></li>
+							<li id="web_consideracoes"><a href="javascript:go('web_consideracoes');">Considerações</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" role="button" aria-expanded="false">Ajuda<span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+							<li id="ajuda_sobre"><a href="javascript:go('ajuda_sobre');">Sobre esta documenta&ccedil;&atilde;o</a></li>
+							<li id="ajuda_changelog"><a href="javascript:go('ajuda_changelog');">Changelog</a></li>
+						</ul>
+					</li>
+				</ul>
+				<!--
+				<form class="navbar-form navbar-right" role="search">
+					<div class="form-group waves-effect waves-light">
+						<input type="text" class="form-control" placeholder="Search">
+					</div>
+				</form>
+				-->
+			</div>
+		</div>
+	</nav>
+	<div>
+		<header>
+		</header>
+
+		<main>
+		<div class="container" id="pagina">
+			
+		</div>
+		
+		</main>
+
+		<footer class="page-footer unique-color center-on-small-only">
+			<div class="footer-copyright rgba-black-light">
+				<div class="container-fluid text-center">
+					&copy; 2016 - 2017 Copyright: SENAI Jaragu&aacute; do Sul
+				</div>
+			</div>
+		</footer>
+	</div>
+	
+	
+	
+
+    <!-- SCRIPTS -->
+
+    <!-- JQuery -->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+    <!-- Material Design Bootstrap -->
+    <script type="text/javascript" src="js/mdb.js"></script>
+	
+	<script type="text/javascript" src="js/sh_main.min.js"></script>
+	<script type="text/javascript" src="js/lang/sh_css.min.js"></script>
+	<script type="text/javascript" src="js/lang/sh_html.min.js"></script>
+	<script type="text/javascript" src="js/lang/sh_javascript.min.js"></script>
+	
+	
+	<script type="text/javascript" >
+		function go(pagina){
+			$("#pagina").html("<h1 class=\"text-center\">Carregando...</h1>");
+			$(".nav  li").removeClass("active");
+			$("#"+pagina).addClass("active");
+			$.ajax("pages/"+pagina+".html", {
+				complete: function(jqXHR, textStatus ){
+					if(textStatus == "success"){
+						$("#pagina").html(jqXHR.responseText);
+						//Função de colocar as cores nos códigos
+						sh_highlightDocument();
+						$('.collapsible').collapsible();
+						//Função de fazer a rolagem suave
+						$('a[href*="#"]:not([href="#"])').click(function() {
+							if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+							  var target = $(this.hash);
+							  target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+							  if (target.length) {
+								$('html, body').animate({
+								  scrollTop: target.offset().top
+								}, 1000);
+								return false;
+							  }
+							}
+						  });
+										
+					} else {
+						$("#pagina").html("<h1 class=\"text-center\">Erro ao carregar o conte&uacute;do.</h1>");
+					}
+				}
+			})
+		}
+		javascript:go('introducao');
+		
+		
+	</script>
+</body>
+
+</html>
