@@ -1,0 +1,79 @@
+<h1>HTML 5 - Estrutura Básica </h1>
+<p>
+	A estrutura básica do HTML5 continua sendo a mesma das versões anteriores (HTML 4.01 e XHTML 1.0), há apenas uma excessão na escrita do Doctype. Segue abaixo como a estrutura básica pode ser seguida:
+</p>
+
+<pre class="sh_html">&lt;!DOCTYPE HTML&gt;
+&lt;html lang=&quot;pt-br&quot;&gt;
+&lt;head&gt;
+	&lt;meta charset=&quot;UTF-8&quot;&gt;
+	&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;estilo.css&quot;&gt;
+	&lt;title&gt;&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<h3>O Doctype</h3>
+<p>
+	O Doctype deve ser a primeira linha de código do documento antes da tag HTML.
+</p>
+<center>
+	<h5>
+		&lt;!DOCTYPE HTML&gt;
+	</h5>
+</center>
+<p>
+	O Doctype indica para o navegador, e para outros meios, qual a especificação de código a utilizar. Em versões anteriores, era necessário referenciar o DTD diretamente no código do Doctype. Com o HTML5, a referência por qual DTD utilizar é responsabilidade do Browser.
+</p><p>
+	O Doctype não é uma tag do HTML, mas uma instrução para que o browser tenha informações sobre qual versão de código a marcação foi escrita.
+</p>
+<h3>O elemento HTML</h3>
+<p>
+	O código HTML é uma série de elementos em árvore onde alguns elementos são filhos de outros e assim por diante. O elemento principal dessa grande árvore é sempre a tag HTML.
+</p>
+<center>
+	<h5>
+		&lt;html lang=&quot;pt-br&quot;&gt;
+	</h5>
+</center>
+<p>
+	O atributo LANG é necessário para que os user-agents saibam qual a linguagem principal do documento.
+</p>
+<center>
+	<div class="row">
+		<div class="col-md-3">
+		</div>
+		<div class="col-md-6">
+			<div class="card-panel info-color">
+				<span class="white-text">Lembre-se de que o atributo LANG não é restrito ao elemento HTML, ele pode ser utilizado em qualquer outro elemento para indicar o idioma do texto representado.
+		  </span>
+			</div>
+		</div>
+		<div class="col-md-3">
+		</div>
+	</div>
+</center>
+<p>
+	No exemplo anterior há uma metatag responsável por chavear qual tabela de caracteres a página está utilizando.
+</p>
+<center>
+	<h5>
+		&lt;meta charset=&quot;UTF-8&quot;&gt;
+	</h5>
+</center>
+
+<h3>Tag LINK</h3>
+<p>
+	Também no exemplo anterior  há uma tag LINK que importa o CSS para nossa página:
+</p>
+<center>
+	<h5>
+		&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;estilo.css&quot;&gt;
+	</h5>
+</center>
+<p>
+	O atributo rel="stylesheet" indica que aquele link é relativo à importação de um arquivo referente a folhas de estilo.
+</p>

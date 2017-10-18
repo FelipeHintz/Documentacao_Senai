@@ -1,0 +1,511 @@
+<center>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="card-panel danger-color">
+				<span class="white-text"><b>Aviso:</b> Esta área ainda está em desenvolvimento
+		  </span>
+			</div>
+		</div>
+	</div>
+</center>
+
+
+<h1> Recursos – Objetos Multimídia </h1>
+
+<h3> Índice dos recursos </h3>
+
+<a href="#destaque" class="btn btn-default waves-effect waves-light">Destaque</a>
+<a href="#lightbox" class="btn btn-default waves-effect waves-light">Light box</a>
+<a href="#textosobreimagem" class="btn btn-default waves-effect waves-light">Texto sobre imagem</a>
+<a href="#abalateral" class="btn btn-default waves-effect waves-light">Aba lateral</a>
+<a href="#sanfona" class="btn btn-default waves-effect waves-light">Sanfona</a>
+<a href="#abatopo" class="btn btn-default waves-effect waves-light">Aba topo</a>
+<a href="#imagem" class="btn btn-default waves-effect waves-light">Imagem</a>
+<a href="#zoom" class="btn btn-default waves-effect waves-light">Zoom</a>
+<a href="#galeria" class="btn btn-default waves-effect waves-light">Galeria de imagens</a>
+<a href="#video" class="btn btn-default waves-effect waves-light">Vídeo</a>
+<a href="#flashswf" class="btn btn-default waves-effect waves-light">Flash (SWF)</a>
+<a href="#popup" class="btn btn-default waves-effect waves-light">Pop up</a>
+<a href="#glossario" class="btn btn-default waves-effect waves-light">Glossário/Informações adicionais</a>
+<a href="#popupexterno" class="btn btn-default waves-effect waves-light">Pop up externo</a>
+<a href="#draganddrop" class="btn btn-default waves-effect waves-light">Drag and drop</a>
+
+<h3 id="destaque"> Destaque </h3>
+<center>
+	<img width="500px" src="images/web_destaque.png" />
+</center>
+<h5> Detalhamento </h5>
+<p>
+	Aplicação de uma área de texto que necessite de destaque. O recurso foi disponibilizado de duas formas: sem ícone, aplicando apenas a classe destaque, ou com ícone, aplicando a classe destaque juntamente com uma das seguintes classes: animacao, atividade, casosErelatos, fiqueAlerta, recapitulando, saibaMais e voceSabia. Cada classe aplica o ícone correspondente seguindo o padrão de cores do curso.
+	</p><p>
+	Existe três formas de adicionar links nas caixas, a primeira é colocar um link no conteúdo, a segunda é trocar o div externo por um link e a terceira é colocar o parâmetro onclick no div externo, com style="cursor:pointer", como pode ser observado no código a seguir.
+</p>
+<h5> Código - HTML </h5>
+<pre class="sh_html">&lt;p class=&quot;destaque&quot;&gt;Transformou-se a reabilita&amp;ccedil;&amp;atilde;o em objetivo dos planos
+governamentais, numa obriga&amp;ccedil;&amp;atilde;o social, sempre levando em
+considera&amp;ccedil;&amp;atilde;o os recursos investidos e  independendo de retornos
+econ&amp;ocirc;micos. Passou assim a ser vista como Reabilita&amp;ccedil;&amp;atilde;o Social, tendo como integrantes do processo a &amp;aacute;rea m&amp;eacute;dica e vocacional [...]&lt;/p&gt;
+
+&lt;div class=&quot;destaque saibaMais&quot; style=&quot;cursor:pointer&quot; title=&quot;Abrir Popup&quot; onclick=&quot;javascript:popup(&#39;http://pt.wikipedia.org&#39;,{win_name:&#39;popup&#39;,w:Math.min(1200,screen.width),h:screen.height-80})&quot;&gt;
+  &lt;h1&gt;Saiba Mais&lt;/h1&gt;
+  &lt;p&gt;Aprofunde seus conhecimentos [...]&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;a class=&quot;destaque atividade&quot; title=&quot;Abrir Atividade&quot; href=&quot;scorm_unity.html?id_simul=2&quot; target=&quot;_blank&quot;&gt;
+  &lt;h1&gt;Fa&amp;ccedil;a a Atividade&lt;/h1&gt;
+  &lt;p&gt;Esta atividade tem o objetivo de [...]&lt;/p&gt;
+&lt;/a&gt;
+
+&lt;div class=&quot;destaque animacao&quot;&gt;
+  &lt;h1&gt;Veja a Anima&amp;ccedil;&amp;atilde;o&lt;/h1&gt;
+  &lt;a title=&quot;Abrir Anima&amp;ccedil;&amp;atilde;o&quot; href=&quot;javascript:popup(&#39;popUp.html&#39;,{win_name:&#39;popup&#39;,w:650,h:460})&quot;&gt;A anima&amp;ccedil;&amp;atilde;o exibe [...]&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;destaque casosErelatos&quot;&gt;
+  &lt;h1&gt;Casos e Relatos&lt;/h1&gt;
+  &lt;p&gt;Aprofunde seus conhecimentos [...]&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;destaque fiqueAlerta&quot;&gt;
+  &lt;h1&gt;Fique Alerta&lt;/h1&gt;
+  &lt;p&gt;Cuidado para n&amp;atilde;o confundir [...]&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;destaque recapitulando&quot;&gt;
+  &lt;h1&gt;Recapitulando&lt;/h1&gt;
+  &lt;p&gt;Vamos rever os conte&amp;uacute;dos estudados [...]&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;destaque voceSabia&quot;&gt;
+  &lt;h1&gt;Voc&amp;ecirc; Sabia?&lt;/h1&gt;
+  &lt;p&gt;Que neste template est&amp;atilde;o dispon&amp;iacute;veis todos recursos que voc&amp;ecirc;
+  vai precisar para desenvolver o conte&amp;uacute;do do curso?&lt;/p&gt;
+&lt;/div&gt;
+
+</pre>
+<h3 id="lightbox"> Light Box </h3>
+<center>
+	<img width="500px" src="images/web_lightbox_1.png" />
+</center>
+<p>
+	Este é mais um recurso que possibilita dar destaque em  uma parte do texto, porém com um recurso mais dinâmico. Nele o aluno clica sob a imagem e abrirá uma janela por cima do conteúdo apresentando a imagem com o texto em evidência. Exemplo ilustrado na imagem seguinte.
+</p>
+<center>
+	<img width="500px" src="images/web_lightbox_2.png" />
+</center>
+<h5> Detalhamento </h5>
+<p>
+	Para este recurso, são necessárias duas imagens:
+	<ul>
+		<li>uma que será inserida na TAG IMG que aparecerá no corpo de texto;</li>
+		<li>e outra que referenciada na TAG A será imagem apresentada no efeito Java Script, como no exemplo ilustrado anteriormente; </li>
+		<li>como mostrado no primeira ilustração existe uma imagem de um ícone ao lado da imagem de uma “mãozinha”, isso significa que o aluno deve clicar sobre a imagem, para isso o ícone deve ser inserido ao lado da própria imagem;</li>
+		<li>note que o texto da light box está sendo inserido dentro da TAG IMG no atributo ALT, isso é necessário para que o software para deficientes consiga ler as informações para o aluno;</li>
+		<li>para exibir um caption com a imagem é necessário colocar o texto no parâmetro title do link.</li>
+	</ul>
+</p>
+<h5> Código - HTML </h5>
+<pre class="sh_html">&lt;style&gt;
+.fancybox-image { margin-top:-30px; }
+&lt;/style&gt;
+&lt;h1&gt;Light Box&lt;/h1&gt;
+&lt;p&gt;A compreens&amp;atilde;o de que os Direitos Humanos s&amp;atilde;o inerentes a todo ser humano e a afirma&amp;ccedil;&amp;atilde;o deste princ&amp;iacute;pio pela ONU ter&amp;aacute; profunda e duradoura influ&amp;ecirc;ncia sobre todos os movimentos sociais, inclusive das pessoas com defici&amp;ecirc;ncia, at&amp;eacute; nossos dias.&lt;/p&gt;
+&lt;p&gt;Adotada e proclamada pela resolu&amp;ccedil;&amp;atilde;o 217 A (III) da  Assembleia Geral das Na&amp;ccedil;&amp;otilde;es Unidas, em 10 de dezembro de 1948, cujo Pre&amp;acirc;mbulo,  bastante conhecido, expressa o ide&amp;aacute;rio de Paz e Justi&amp;ccedil;a, onde a Educa&amp;ccedil;&amp;atilde;o tem  papel central, a Assembleia Geral proclamou.&lt;/p&gt;
+&lt;a class=&quot;fancybox&quot; href=&quot;imgs/cap2 7.png&quot;&gt;&lt;img src=&quot;imgs/cap2 8.png&quot; alt=&quot;Que em 1854, no Hosp&amp;iacute;cio D. Pedro II, no Rio de Janeiro, j&amp;aacute; havia oficinas de sapataria, alfaiataria, marcenaria, florista  e fia&amp;ccedil;&amp;atilde;o de estopa ministradas como parte do tratamento de Terapia Ocupacional para pessoas com dist&amp;uacute;rbios psiqui&amp;aacute;tricos?&quot;&gt;&lt;/a&gt;
+&lt;p&gt;A Declara&amp;ccedil;&amp;atilde;o &amp;eacute; um dos principais &amp;ndash; se n&amp;atilde;o o principal &amp;ndash; marco referencial  desde ent&amp;atilde;o, pois garantiu vez e voz a todo ser humano.&lt;/p&gt;
+&lt;a class=&quot;fancybox&quot; href=&quot;imgs/cap2 7.png&quot; title=&quot;Light Box com Caption&quot;&gt;&lt;img src=&quot;imgs/cap2 8.png&quot; alt=&quot;Texto para os leitores de tela&quot;&gt;&lt;/a&gt;
+
+</pre>
+<h5> Especificações </h5>
+<p>
+	Formato: PNG<br>
+	Tamanho máximo: 120x120
+</p>
+<h3 id="textosobreimagem"> Texto sobre Imagem </h3>
+<center>
+	<img width="500px" src="images/web_texto_sobre_imagem_1.png" />
+</center>
+<p>
+	Este recurso possibilita uma ligação entre texto e imagem. Ao passar o mouse sob a imagem, o aluno terá acesso a um texto que aparecerá  por cima da ilustração. Veja, na figura a seguir, o exemplo do texto após ter posicionado o mouse em cima da imagem.
+</p>
+<center>
+	<img width="500px" src="images/web_texto_sobre_imagem_2.png" />
+</center>
+<h5> Detalhamento </h5>
+<p>
+	Para que o recurso funcione corretamente e que o software para deficientes consiga ler as informações, você deve colocar o texto dentro da TAG SPAN. 
+	</p><p>
+	O ícone localizado no canto direito superior é apresentado automaticamente pelo plugin, com a cor de fundo bg_main definida no skin_vet.
+</p>
+<h5> Código - HTML </h5>
+<pre class="sh_html">&lt;img class=&quot;txtOverImg&quot; src=&quot;imgs/04.05.02.png&quot; alt=&quot;&quot; name=&quot;#txtOverImg2&quot;&gt;
+&lt;div id=&quot;txtOverImg2&quot;&gt;
+  &lt;span&gt;O primeiro curso t&amp;eacute;cnico de Fisioterapia, com dura&amp;ccedil;&amp;atilde;o de 1 ano,
+  foi criado em 1951 na Universidade de S&amp;atilde;o Paulo.&lt;/span&gt;
+&lt;/div&gt;
+
+</pre>
+<h5> Especificações </h5>
+<p>
+	Formato: PNG ou JPG<br>
+	Tamanho máximo: 300x300
+</p>
+<h3 id="abalateral"> Aba Lateral </h3>
+<center>
+	<img width="500px" src="images/web_aba_lateral.png" />
+</center>
+<h5> Detalhamento </h5>
+<p>
+	Recurso que possibilita trabalhar com textos maiores. São botões com  títulos principais, que ao clicar, exibem os conteúdos do lado direito.
+</p>
+<h5> Código - HTML </h5>
+<pre class="sh_html">&lt;section class=&quot;tabs vertical&quot;&gt;
+  &lt;nav&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#tab-b1&quot;&gt;Desamparado e &lt;br&gt;passivo&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#tab-b2&quot;&gt;&amp;ldquo;Problema&amp;rdquo;&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#tab-b3&quot;&gt;Esfor&amp;ccedil;o unilateral&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/nav&gt;
+  &lt;div class=&quot;content-tabs&quot;&gt;
+    &lt;section id=&quot;tab-b1&quot;&gt;
+      &lt;p&gt;O modelo m&amp;eacute;dico da defici&amp;ecirc;ncia nos designa o papel &lt;b&gt;desamparado&lt;/b&gt; e &lt;b&gt;passivo&lt;/b&gt; de pacientes, no qual somos considerados &lt;b&gt;dependentes&lt;/b&gt; do cuidado de outras pessoas, &lt;b&gt;incapazes&lt;/b&gt; de trabalhar, &lt;b&gt;isentos&lt;/b&gt; dos deveres normais, levando vidas in&amp;uacute;teis, como est&amp;aacute; evidenciado na palavra ainda comum &amp;ldquo;inv&amp;aacute;lido&amp;rdquo; (sem valor, em latim).
+      &lt;/p&gt;
+    &lt;/section&gt;
+    &lt;section id=&quot;tab-b2&quot;&gt;
+      &lt;p&gt;Tradicionalmente, a defici&amp;ecirc;ncia tem sido vista como um &amp;ldquo;&lt;b&gt;problema&lt;/b&gt;&amp;rdquo; do indiv&amp;iacute;duo e, por isso, o pr&amp;oacute;prio indiv&amp;iacute;duo teria de se adaptar &amp;agrave; sociedade ou ele teria de ser mudado por profissionais atrav&amp;eacute;s da reabilita&amp;ccedil;&amp;atilde;o ou da cura. &lt;/p&gt;
+    &lt;/section&gt;
+    &lt;section id=&quot;tab-b3&quot;&gt;
+      &lt;p&gt;Da pessoa com defici&amp;ecirc;ncia, de sua fam&amp;iacute;lia, da institui&amp;ccedil;&amp;atilde;o especializada e/ou simpatizantes.&lt;/p&gt;
+    &lt;/section&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+</pre>
+<h3 id="sanfona"> Sanfona </h3>
+<center>
+	<img width="500px" src="images/web_sanfona.png" />
+</center>
+<h5> Detalhamento </h5>
+<p>
+	Também é um recurso de texto, porém com  um efeito sanfona, onde ao clicar no botão do título principal, o assunto tratado é expandido abaixo do mesmo.
+</p>
+<h5> Código - HTML </h5>
+<pre class="sh_html">&lt;div class=&quot;acd&quot;&gt;
+	&lt;h3&gt;1927&lt;/h3&gt;
+	&lt;div&gt;
+		&lt;p&gt;A  conflu&amp;ecirc;ncia de fatores como a consci&amp;ecirc;ncia da dignidade inerente ao ser humano; o trabalho como um direito de todos.&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;h3&gt;1943&lt;/h3&gt;
+	&lt;div&gt;
+		&lt;p&gt;A  conflu&amp;ecirc;ncia de fatores como a consci&amp;ecirc;ncia da dignidade inerente ao ser humano; o trabalho como um direito de todos.&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;h3&gt;1950&lt;/h3&gt;
+	&lt;div&gt;
+		&lt;p&gt;A  conflu&amp;ecirc;ncia de fatores como a consci&amp;ecirc;ncia da dignidade inerente ao ser humano; o trabalho como um direito de todos.&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+
+</pre>
+<h3 id="abatopo"> Abas Topo </h3>
+<center>
+	<img width="500px" src="images/web_aba_topo.png" />
+</center>
+<h5> Detalhamento </h5>
+<p>
+	Mais um recurso de texto que, ao clicar sobre o botão de título, exibirá abaixo o assunto tratado. 
+</p>
+<h5> Código - HTML </h5>
+<pre class="sh_html">&lt;section class=&quot;tabs&quot;&gt;
+  &lt;nav&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#tab-b1&quot;&gt;Atividade: In&amp;iacute;cio&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#tab-b2&quot;&gt;Atividade: Meio&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/nav&gt;
+  &lt;div class=&quot;content-tabs&quot;&gt;
+    &lt;section id=&quot;tab-b1&quot;&gt;
+      &lt;h2&gt;Atividades de monitoria antes do  in&amp;iacute;cio do curso&lt;/h2&gt;
+      &lt;ul class=&quot;squared&quot;&gt;
+        &lt;li&gt;familiarizar-se com o Modelo  de Execu&amp;ccedil;&amp;atilde;o do PN-EAD;&lt;/li&gt;
+        &lt;li&gt;participar de capacita&amp;ccedil;&amp;atilde;o  espec&amp;iacute;fica para o papel oferecida pelo DN&lt;/li&gt;
+        &lt;li&gt;participar de reuni&amp;otilde;es no  N&amp;uacute;cleo de EAD;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/section&gt;
+    &lt;section id=&quot;tab-b2&quot;&gt;
+      &lt;h2&gt;Atividades  de monitoria durante o curso ou unidade curricular&lt;/h2&gt;
+      &lt;ul class=&quot;squared&quot;&gt;
+        &lt;li&gt;apoiar os estudantes na  familiariza&amp;ccedil;&amp;atilde;o com o AVA e a proposta do curso;&lt;/li&gt;
+        &lt;li&gt;orientar os estudantes quanto  ao uso correto das diferentes ferramentas do AVA e de outros canais de  comunica&amp;ccedil;&amp;atilde;o com o tutor e o pr&amp;oacute;prio monitor de EAD;&lt;/li&gt;
+        &lt;li&gt;responder a d&amp;uacute;vidas  tecnol&amp;oacute;gicas e administrativas enviadas por meio das ferramentas de comunica&amp;ccedil;&amp;atilde;o  do AVA e telefone (quando necess&amp;aacute;rio);&lt;/li&gt;
+        &lt;li&gt;reportar, ao suporte t&amp;eacute;cnico,  problemas no AVA;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/section&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+</pre>
+<h3 id="imagem"> Imagem </h3>
+<center>
+	<img width="500px" src="images/web_imagem.png" />
+</center>
+<h5> Detalhamento </h5>
+<p>
+	Imagem fixa no canto direito deixando o texto correr ao redor. A rotação, a sombra e a borda são inseridas automaticamente pela classe figuraMoldura.
+	</p><p>
+	Você deve inserir a descrição da imagem no atributo ALT da tag IMG, para que o software para deficientes consiga ler as informações.
+</p>
+<h5> Código - HTML </h5>
+<pre class="sh_html">&lt;img src=&quot;imgs/04.05.02.png&quot; class=&quot;figuraMoldura&quot; style=&quot;width:200px&quot;&gt;
+&lt;p&gt;Mediante a situa&amp;ccedil;&amp;atilde;o  contextualizada anteriormente, voc&amp;ecirc; decide ent&amp;atilde;o buscar se informar sobre o  assunto, e inicialmente assiste ao v&amp;iacute;deo &amp;ldquo;O caso da Escola Clarisse Fecury&amp;rdquo; &amp;ndash;  Rio Branco, AC - Dura&amp;ccedil;&amp;atilde;o 6:34. Que voc&amp;ecirc; pode ter acesso.&lt;/p&gt;
+
+</pre>
+<h5> Especificações </h5>
+<p>
+	Formato: PNG ou JPG<br>
+	Tamanho máximo: 300x300
+</p>
+<h3 id="zoom"> Zoom </h3>
+<center>
+	<img width="500px" src="images/web_zoom.png" />
+</center>
+<h5> Detalhamento </h5>
+<p>
+	Recurso utilizado para imagens que exijam uma visão mais detalhada.
+</p><p>
+	Para que o efeito funcione perfeitamente é preciso ajustar o width e height na tag IMG na linha 6, para definir o tamanho de exibição na tela. No exemplo acima foi utilizada uma imagem de 704x553, e foi informado 310x177, para possibilitar o efeito de zoom.
+</p><p>
+	O icone localizado no canto direito superior é apresentado automaticamente pelo plugin, com a cor de fundo bg_main definida no skin_vet.
+</p><p>
+	Você deve inserir a descrição da imagem dentro da última TAG SPAN que aparece com a classe legenda e dentro da TAG IMG no atributo ALT ilustrada na imagem acima para que o software para deficientes consiga ler as informações. 
+</p>
+<h5> Código - HTML </h5>
+<pre class="sh_html">&lt;span class=&quot;zoom&quot;&gt;
+	&lt;img src=&quot;imgs/car.jpg&quot; width=&quot;263&quot; height=&quot;150&quot; alt=&quot;Erros de linguagem dos alunos&quot;&gt;
+&lt;/span&gt;
+
+&lt;span class=&quot;zoom&quot;&gt;
+	&lt;img src=&quot;imgs/04.05.02.png&quot; width=&quot;150&quot; height=&quot;150&quot; alt=&quot;Outra imagem com zoom&quot;&gt;
+&lt;/span&gt;
+&lt;span class=&quot;legenda&quot;&gt;Erros de linguagem dos alunos&lt;/span&gt;
+
+</pre>
+<h5> Especificações </h5>
+<p>
+	Formato: JPG e PNG<br>
+	Tamanho máximo: 350x350
+</p>
+
+<h3 id="galeria"> Galeria de Imagens </h3>
+<center>
+	<img width="500px" src="images/web_galeria_1.png" />
+</center>
+<p>
+	Recurso que possibilita ter várias imagens na mesma tela, navegando horizontalmente entre elas. Veja exemplo a seguir.
+</p>
+<center>
+	<img width="500px" src="images/web_galeria_2.png" />
+</center>
+<h5> Detalhamento </h5>
+<p>
+	A imagem que será mostrada na tela de conteúdo é inserida no link que abrirá a galeria. Já as imagens que farão parte da galeria devem ser inseridas no script.
+</p><p>
+	Como mostrado na primeira ilustração, o ícone de “mãozinha” ao lado da imagem deve ser inserido para mostrar que o aluno pode clicar sobre a imagem.
+</p><p>
+	As descrições para o software para deficientes devem ser inseridas no atributo ALT da TAG IMG, ilutrado na imagem abaixo.
+</p>
+<h5> Código - HTML </h5>
+<pre class="sh_html">&lt;a id=&quot;galeriaImagens&quot; href=&quot;#&quot;&gt;&lt;img src=&quot;imgs/galeria_inicial.jpg&quot; alt=&quot;1 - Exemplo de Plano de Situa&#231;&#227;o de Aprendizagem. 2 - Aluno lendo em uma biblioteca. 3 - Aluno no computador. 4 - Aperto de m&#227;os&quot;&gt;&lt;/a&gt;
+&lt;script&gt;
+$(&#39;#galeriaImagens&#39;).click(function() {
+ $.fancybox.open(
+  [{href:&#39;imgs/galeria_1.jpg&#39;},
+   {href:&#39;imgs/galeria_2.jpg&#39;},
+   {href:&#39;imgs/galeria_3.jpg&#39;},
+   {href:&#39;imgs/galeria_4.jpg&#39;},
+   {href:&#39;imgs/galeria_5.jpg&#39;}],
+  { helpers:{ thumbs:{ width:80, height:60 } } }
+ );
+});
+&lt;/script&gt;
+
+</pre>
+<h5>Especificações</h5>
+<p>
+	Formato: JPEG<br>
+	Resolução máxima da imagem: 612x612<br>
+	Resolução máxima da miniatura: 150x150<br>
+	Tamanho máximo de arquivo: 10MB
+</p>
+<h3 id="video"> Vídeo </h3>
+<center>
+	<img width="500px" src="images/web_video.png" />
+</center>
+<h5> Detalhamento </h5>
+<p>
+	Os vídeos podem ser inseridos no conteúdo individualmente ou em um grupo (playlist). Em ambos casos é necessário informar as dimensões do vídeo no parâmetro style do link e o caminho do arquivo no parâmetro href, como mostrado no código HTML acima. No vídeo único, o parâmetro id deve ser único, e iniciar com video_, já para a playlist, o id do link, também único, deve iniciar com videos_ e o id do div que engloba os vídeos deve iniciar com playlist_, sendo que o restante do id após estes prefixos deve ser igual na mesma playlist. Este padrão é necessário para que os vídeos sejam inseridos automaticamente.
+</p><p>
+	Sobre o tamanho dos arquivos de vídeo, o ideal é um tamanho máximo de 20MB, caso haja uma grande necessidade de um vídeo maior, pode ser inserido em casos esporádicos, tendo em vista o tamanho do pacote final SCORM.
+</p>
+<h5> Código - HTML </h5>
+<pre class="sh_html">&lt;h1&gt;V&amp;iacute;deo &amp;Uacute;nico&lt;/h1&gt;
+&lt;div style=&quot;width:720px;height:480px;margin:20px auto&quot;&gt;
+  &lt;a id=&quot;video_1&quot; class=&quot;player&quot; href=&quot;video/video.mp4&quot; style=&quot;width:720px;height:480px&quot;&gt;&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;h1&gt;Playlist de V&amp;iacute;deos&lt;/h1&gt;
+&lt;div class=&quot;playlists&quot;&gt;
+  &lt;a id=&quot;videos_1&quot; class=&quot;player&quot; href=&quot;&quot; style=&quot;display:block;width:320px;height:240px&quot;&gt;&lt;/a&gt;
+  &lt;div id=&quot;playlist_1&quot; class=&quot;playlist&quot;&gt;
+    &lt;a href=&quot;video/uc2_ue1_01.flv&quot;&gt;&lt;strong&gt;Mult&amp;iacute;metro&lt;/strong&gt;&lt;/a&gt;
+    &lt;a href=&quot;video/video.mp4&quot;&gt;&lt;strong&gt;V&amp;iacute;deo&lt;/strong&gt;&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+</pre>
+<h5>Especificações</h5>
+<p>
+	Formato: MP4, F4V e FLV<br>
+	Resolução máxima: 600x400<br>
+	Tamanho máximo de arquivo: 20MB
+</p>
+<h3 id="flashswf"> Flash (SWF)  </h3>
+<center>
+	<img width="500px" src="images/web_flash.png" />
+</center>
+<p>
+	Em caso da necessidade de inserção de animações SWF.
+</p>
+<center>
+	<div class="row">
+		<div class="col-md-3">
+		</div>
+		<div class="col-md-6">
+			<div class="card-panel danger-color">
+				<span class="white-text">
+					É importante lembrar que no novo template os recursos em Flash devem ser evitados. Só devem ser utilizados se não houver possibilidade de substituição por outra tecnologia que funcione em uma ampla gama de dispositivos (de desktops a dispositivos móveis).<br>
+					Em caso de utilização deste software, o aluno não pode ter seus estudos prejudicados caso acesse o curso por meio de um dispositivo móvel.
+		  </span>
+			</div>
+		</div>
+		<div class="col-md-3">
+		</div>
+	</div>
+</center>
+<h5> Detalhamento </h5>
+<p>
+	As animações em flash são inseridas no conteúdo automaticamente, mas para isso é necessário que o parâmetro id do div que a engloba seja único e inicie com flash_. Também é necessário informar as dimensões no parâmetro style do div e o caminho do arquivo no conteúdo do mesmo, como mostrado no código HTML abaixo.
+</p>
+<h5> Código - HTML </h5>
+<pre class="sh_html">&lt;div id=&quot;flash_1&quot; style=&quot;width:640px;height:460px;margin:0 auto&quot;&gt;anim/animacao2.swf&lt;/div&gt;
+
+</pre>
+<h3 id="popup"> Pop Up </h3>
+<center>
+	<img width="500px" src="images/web_popup_1.png" />
+</center>
+<p>
+	Efeito ativado.
+</p>
+<center>
+	<img width="500px" src="images/web_popup_2.png" />
+</center>
+<h5> Detalhamento </h5>
+<p>
+	Para este recurso, são necessários dois arquivos: um será uma imagem inserida na TAG IMG que aparecerá no corpo de texto; e o outro uma imagem que referenciada na TAG A o SWF que será apresentada no efeito Java Script, como no exemplo ilustrado anteriormente. 
+</p><p>
+	Como mostrado no primeira ilustração, existe uma imagem de um ícone ao lado da imagem de uma “mãozinha”, isso significa que o aluno deve clicar sobre a imagem e por isso o ícone deve ser inserido ao lado da própria imagem.
+</p><p>
+	Note que o texto da light box está sendo inserido dentro da TAG IMG no atributo ALT, isso é necessário para que o software para deficientes consiga ler as informações para o aluno.
+</p><p>
+	Confira o código-fonte abaixo.
+</p>
+<h5> Código - HTML </h5>
+<pre class="sh_html">&lt;a class=&quot;fancybox&quot; href=&quot;anim/contextualizacao.swf&quot;&gt;
+  &lt;img src=&quot;anim/img_cont.png&quot; alt=&quot;Que em 1854, no Hosp&amp;iacute;cio D. Pedro II dist&amp;uacute;rbios psiqui&amp;aacute;tricos?&quot;&gt;
+&lt;/a&gt;
+
+</pre>
+<h5>Especificações</h5>
+<p>
+	Formato: SWF<br>
+	Resolução máxima: 600x400<br>
+	Tamanho máximo de arquivo: 10MB
+</p>
+<h3 id="glossario"> Glossário/Informações adicionais </h3>
+<center>
+	<img width="500px" src="images/web_glossario_1.png" />
+</center>
+<p>
+	Este recurso tem a finalidade de trazer informações adicionais.
+</p>
+<center>
+	<img width="500px" src="images/web_glossario_2.png" />
+</center>
+<h5> Detalhamento </h5>
+<p>
+	Observando o código abaixo você irá perceber que o efeito é ativado pela função overlay, no parâmetro href do link. Essa função precisa de dois parâmetros: sendo o primeiro o título e o segundo o texto do pop up.
+</p><p>
+	A outra forma é criar um link, div ou span com o ID iniciando com bt_hint_, e o conteúdo do hint fica em um div com ID iniciando com hint_ e o mesmo sufixo. Esse elemento deve possuir display none, o título no parâmetro title e a mensagem HTML a ser exibida no conteúdo.
+</p>
+<center>
+	<div class="row">
+		<div class="col-md-3">
+		</div>
+		<div class="col-md-6">
+			<div class="card-panel info-color">
+				<span class="white-text">
+					Como você pôde observar, os pop ups devem seguir a cor da área do curso em questão.
+		  </span>
+			</div>
+		</div>
+		<div class="col-md-3">
+		</div>
+	</div>
+</center>
+<h5> Código - HTML </h5>
+<pre class="sh_html">&lt;p&gt;Segundo Sassaki (2010), em 1958, atrav&amp;eacute;s da Lei n&amp;ordm; 5.029, o INAR passou a denominar-se &lt;a href=&quot;javascript:overlay(&#39;Gloss&amp;aacute;rio&#39;,&#39;Para conhecer a hist&amp;oacute;ria do IR, sua estrutura e os servi&amp;ccedil;os oferecidos, voc&amp;ecirc; pode acessar o &lt;em&gt;site&lt;/em&gt; do Hospital das Cl&amp;iacute;nicas da Faculdade de Medicina da USP.&#39;)&quot;&gt;Instituto de Reabilita&amp;ccedil;&amp;atilde;o (IR)&lt;/a&gt;. Especialistas de diversos pa&amp;iacute;ses trabalharam  como consultores, contribuindo para consolidar sua fama de excel&amp;ecirc;ncia, que  atraiu pacientes do Brasil e tamb&amp;eacute;m de outros pa&amp;iacute;ses da Am&amp;eacute;rica Latina.&lt;/p&gt;
+
+</pre>
+<h3 id="popupexterno"> Pop Up Externo </h3>
+<center>
+	<img width="500px" src="images/web_popup_externo_1.png" />
+</center>
+<p>
+	Este recurso é utilizado para abrir uma nova janela do navegador que apresenta uma identidade visual padrão, conforme a próxima ilustração.
+</p>
+<center>
+	<img width="500px" src="images/web_popup_externo_2.png" />
+</center>
+<h5> Detalhamento </h5>
+<p>
+	Esta funcionalidade pode ser utilizada para inserção de animações, simuladores ou texto. Para que o recurso funcione, você deverá criar uma página html com o conteúdo que irá aparecer no pop up. A abertura do conteúdo externo é feita através da charmada da função popup, ilustrada na imagem abaixo, passando no primeiro parâmetro o caminho do arquivo HTML, e no segundo as dimensões da janela, sendo w a largura e h a altura.
+</p>
+<center>
+	<div class="row">
+		<div class="col-md-3">
+		</div>
+		<div class="col-md-6">
+			<div class="card-panel info-color">
+				<span class="white-text">
+					Como você pôde observar, os pop ups devem seguir a cor da área do curso em questão, assim como o nome do curso e logomarca do SENAI. <br>
+					Lembrando que a logomarca do SENAI pode ser utilizada na forma negativa ou positiva, esta decisão deve ser tomada mediante harmonia com a área do curso. 
+		  </span>
+			</div>
+		</div>
+		<div class="col-md-3">
+		</div>
+	</div>
+</center>
+<h5> Código - HTML </h5>
+<pre class="sh_html">&lt;p&gt;&lt;a href=&quot;javascript:popup(&#39;popUp.html&#39;,{w:625,h:460})&quot;&gt;Especialistas de diversos pa&amp;iacute;ses trabalharam como consultores.&lt;/a&gt;&lt;/p&gt;
+
+</pre>
+<h3 id="draganddrop"> Drag and Drop do jQuery UI com suporte a Touch Events </h3>
+<p>
+	A biblioteca Touch Punch foi integrada ao Template juntamente com o jQuery UI. Dessa forma, basta utilizar os recursos do jQuery UI normalmente para que os eventos de Drag & Drop funcionem em telas Touch Screen. Alguns exemplos foram implementados para demonstração, como visto na imagem abaixo.
+</p>
+<center>
+	<img width="500px" src="images/web_drag_and_drop.png" />
+</center>
+

@@ -1,0 +1,274 @@
+<h1> Padrões <i>Edge</i></h1>
+<p>
+	Esta seção serve para ser aplicada em todas as animações de contextualição, pois todas elas seguem um padrão em comum. Segue as especificações:
+	<ul>
+		<li>Largura: 600px</li>
+		<li>Altura: 400px</li>
+		<li>Fundo da animação sempre na cor #FFFFFF</li>
+		<li>Não pode ser usada nenhuma imagem em <i>.SVG</i> nas animações. Para evitar isso, sempre exporte as imagens do <i>Illustrator</i> para <i>.PNG</i></li>
+		<li>Fonte: 13px</li>
+		<li>Todas as imagens/vídeos deve ter como nomenclatura padrão correspondente ao número da sua animação. Ex.: <i>animacao03.avi</i> </li>
+		<li>Os arquivos extras utilizados na animação (como imagens, vídeos, scripts, audios etc) não podem ter caracteres especiais no nome do arquivo, como "ç, ã, é, {, %". Os únicos caracteres especiais aceitos são: _ (underline), - (hífem) e . (ponto).</li>
+		<li>Utilizar o botão inicial.</li>
+	</ul>
+</p>
+<h3>
+	Inserindo o botão inicial na animação
+</h3>
+<div class="row">
+	<div class="cotainer-fluid">
+		<div class="col-md-8">
+			<p>
+				Fazer o <i>download</i> da ultima versão do <b>botão iniciar.ansym</b>.
+			</p>
+			<p>
+				Após isso, localize a aba que está escrito <i>Symbols</i>, agora clique no ícone do lado direito semelhante a um &plus;, e clique na opção <i>Import symbols...</i> como mostra a figura a seguir:
+			</p>
+		</div>
+		<div class="col-md-4">
+			<center>
+				<img src="images/import_symbol.png" />
+			</center>
+		</div>
+	</div>
+	<div class="cotainer-fluid">
+		<div class="col-md-8">
+			<p>
+				Após isso, selecione o símbolo <b>btnInicial_1</b> e arraste para o <i>Stage</i>.
+			</p>
+		</div>
+		<div class="col-md-4">
+			<center>
+				<img src="images/SA_importar.png" />
+			</center>
+		</div>
+	</div>
+</div>
+
+<h3>
+	Inserindo as funções do botão
+</h3>
+<div class="row">
+	<div class="cotainer-fluid">
+		<p>
+			Para que o botão inicial funcione é necessario inserir alguns códigos na sua animação.
+		</p>
+		<div class="col-md-8">
+			<p>
+				Abra a janela <i>Code</i> do <i>Edge</i>, para isso pressione <i>Ctrl</i> + E, após clique no botão <i>Full Code</i> na parte superior direita da janela <i>Code</i> nessa janela cole o seguinte código:
+			</p>
+			<pre class="sh_javascript">
+				<code>
+var controle = 0;
+var exe = 0;
+var timer = 0;
+var deixou = false;
+var tempoBarra;
+var posicaoClick;
+var myVar;
+var controleTempo;
+var simbolosIgnorar = [""]; 
+				</code>
+			</pre>
+			<p>
+				No vetor simbolosIgnorar deveram ser colocados os nomes dos simbolos que continuaram a ser executados mesmo que o aluno pause a animação, para inserir mais simbolos nesse vetor apenas coloque uma <b>,</b> e o nome do simbolo entre <b>""</b>.
+			</p>
+		</div>
+		<div class="col-md-4">
+			<center>
+				<img src="images/SA_Code.png" />
+			</center>
+		</div>
+	</div>
+	<div class="cotainer-fluid">
+		<div class="col-md-8">
+			<p>
+				Após isso, adicione uma ação de <i>CreationComplete</i> no Stage, para isso clique em <b>{ }</b> do <i>Stage</i> no menu <i>Elements</i>, na janela que abriu selecione <i>creationComplete</i> e cole o seguinte código:
+			</p>
+			<pre class="sh_javascript">
+				<code>
+var status = 0;
+var myVar;         
+var tamanhoAnimacao = sym.getComposition().getStage().getDuration();
+var avancoControle = (sym.getComposition().getStage().getSymbol("btnInicial_1").$("BarraControle").css('width').substring(0, sym.getComposition().getStage().getSymbol("btnInicial_1").$("BarraControle").css('width').indexOf("p"))) / (tamanhoAnimacao / 10);
+
+sym.getSymbol("btnInicial_1").$("Posicao").hide();
+sym.getSymbol("btnInicial_1").$("Play").hide();
+
+myTimer = function() {
+	controle += avancoControle;
+	sym.getSymbol("btnInicial_1").$("Progresso").css({clip: "rect(0px, "+controle+"px, 3px, 0px)"})
+	var controleTemp = controle + 20
+	sym.getSymbol("btnInicial_1").$("Posicao").css({left: controleTemp+"px"})
+}
+
+funcaoBarra = function() {         	
+	timer++;
+	if (status == 1) {
+		if (timer > 500){
+			clearInterval(tempoBarra);
+			timer = 0;         		
+			tempoBarra = null;
+			deixou = true;
+			sym.getSymbol("btnInicial_1").$("BarraOpcoes").fadeOut();
+			sym.getSymbol("btnInicial_1").$("BarraProgresso").fadeOut();
+			sym.getSymbol("btnInicial_1").$("Progresso").fadeOut();
+			sym.getSymbol("btnInicial_1").$("Posicao").fadeOut();
+			sym.getSymbol("btnInicial_1").$("btnControle").fadeOut();
+		}
+	}
+}
+
+voltaBarra = function() {         	
+	sym.getSymbol("btnInicial_1").$("BarraOpcoes").fadeIn();
+	sym.getSymbol("btnInicial_1").$("BarraProgresso").fadeIn();
+	sym.getSymbol("btnInicial_1").$("Progresso").fadeIn();
+	sym.getSymbol("btnInicial_1").$("Posicao").fadeIn();
+	sym.getSymbol("btnInicial_1").$("btnControle").fadeIn();
+}
+
+var simbolos = sym.getChildSymbols();
+
+for (var i = 0; i < simbolos.length; i++)
+	simbolos[i].stop();
+
+var videos = $("video")
+
+for (var i = 0; i < videos.length; i++)
+	videos[i].pause();
+
+				</code>
+			</pre>
+			
+		</div>
+		<div class="col-md-4">
+			<center>
+				<img src="images/SA_Stage.png" />
+			</center>
+		</div>
+	</div>
+	<div class="cotainer-fluid">
+		<div class="col-md-8">
+			<p>
+				Por ultimo adicione a função que indicara ao botão que a animação acabou.
+			</p>
+			<p>
+				Crie uma <i>trigger</i> no final do sua animação, para isso mova a timeline para o final da animação e aperte <i>Ctrl</i> + T, na janela que abriu cole o seguinte código: 
+			</p>
+			<pre class="sh_javascript">
+				<code>
+var simbolos = sym.getChildSymbols();
+for (var i = 0; i < simbolos.length; i++) {
+	if (simbolos[i].name != "Progresso" && simbolos[i].name != "Symbol_1")
+	simbolos[i].stop();
+}
+var videos = $("video")
+
+for (var i = 0; i < videos.length; i++)
+	videos[i].pause();
+
+sym.stop();
+sym.getSymbol("btnInicial_1").getSymbol("Progresso").stop();
+status = 2;
+sym.getSymbol("btnInicial_1").getSymbol("btnControle").stop("Replay");
+clearInterval(myVar);
+				</code>
+			</pre>
+		</div>
+	</div>
+</div>
+
+<h3>
+	Garantindo o funcionamento da Animação
+</h3>
+<div class="row">
+	<div class="cotainer-fluid">
+		<p>
+			Para garantir o funcionamento do botão é necessario alterar algumas configurações do <i>Edge</i>.
+		</p>
+		<div class="col-md-8">
+			<p>
+				O botão incial sempre deve ter o nome "<b>btnInicial_1</b>" e deve ser a primeira camada do <i>Edge</i>.
+			</p>
+			<p>
+				Certifique-se que a animação esta com as dimensões 600x400, desabilite o autoplay e ative a responsividade da animação, para isso habilite o <i>Center Stage</i> e selecione Both faça o mesmo para o <i>Responsive Scaling</i>, essas configurações podem ser encontradas no lado esquerdo do <i>Edge</i> no menu <i>Properties</i> conforme a imagem a seguir:
+			</p>
+			<p>
+				Importar os scripts "<b>jquery-1.12.1.min.js</b>" e "<b>jquery-ui.min.js</b>" que podem ser baixados na seção de <i>download</i> de componentes. 
+			</p>
+		</div>
+		<div class="col-md-4">
+			<center>
+				<img src="images/SA_configuracoes.png" />
+			</center>
+		</div>
+	</div>
+</div>
+<h3>
+	Códigos adicionais
+</h3>
+<p>
+	Em algumas animações será necessario que a animação seja pausada até que o aluno faça alguma ação, para essas animações os códigos abaixo devem ser usados.
+</p>
+<div class="row">
+	<div class="col-md-8">
+		<p>
+			Pausar a animação.
+		</p>
+		<pre class="sh_javascript">
+			<code>
+var simbolos = sym.getChildSymbols();
+for (var i = 0; i < simbolos.length; i++) {
+	var temp = false;
+	for (var x = 0; x < simbolosIgnorar.length; x++) {
+		if (simbolos[i].name == simbolosIgnorar[x])
+		temp = true;
+	}
+	if (!temp)
+	simbolos[i].stop();
+}
+var videos = $("video")
+
+for (var i = 0; i < videos.length; i++)
+	videos[i].pause();
+
+sym.stop();
+sym.getSymbol("btnInicial_1").getSymbol("Progresso").stop();
+status = 0;
+sym.getSymbol("btnInicial_1").getSymbol("btnControle").stop("Play");
+clearInterval(myVar);
+			</code>
+		</pre>
+	</div>
+	<div class="col-md-4">
+	</div>
+	<div class="col-md-8">
+		<p>
+			Continuar a animação.
+		</p>
+		<pre class="sh_javascript">
+			<code>
+sym.getComposition().getStage().play()
+sym.getComposition().getStage().getSymbol("btnInicial_1").$("Pausa").show();
+sym.getComposition().getStage().getSymbol("btnInicial_1").getSymbol("Pausa").play("fadeOut");
+sym.getComposition().getStage().getSymbol("btnInicial_1").getSymbol("btnControle").stop("Pause")
+status = 1;
+sym.getComposition().getStage().getSymbol("btnInicial_1").getSymbol("Progresso").play();
+myVar = setInterval(function(){myTimer()}, 10);
+sym.getComposition().getStage().getSymbol("btnInicial_1").$("Posicao").show();
+var simbolos = sym.getComposition().getStage().getChildSymbols();
+for (var i = 0; i < simbolos.length; i++) {
+	var temp = false;
+	for (var x = 0; x < simbolosIgnorar.length; x++) {
+		if (simbolos[i].name == simbolosIgnorar[x])
+		temp = true;
+	}
+	if (!temp)
+	simbolos[i].stop();
+}
+			</code>
+		</pre>
+	</div>
+	<div class="col-md-4">
+	</div>
+</div>

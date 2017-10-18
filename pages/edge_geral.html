@@ -1,0 +1,102 @@
+<h1> Padrões gerais </h1>
+<p>
+	Esta seção serve para ser aplicada em todas as animações, pois todas elas seguem um padrão em comum. Segue as especificações:
+	<ul>
+		<li>Largura máxima: 600px</li>
+		<li>Altura máxima: 400px</li>
+		<li>Fundo da animação sempre na cor #FFFFFF</li>
+		<li>Não pode ser usada nenhuma imagem em <i>.SVG</i> nas animações. Para evitar isso, sempre exporte as imagens do <i>Illustrator</i> para <i>.PNG</i></li>
+		<li>Todas as imagens/vídeos deve ter como nomenclatura padrão correspondente ao número da sua animação. Ex.: <i>animacao03.avi</i> </li>
+		<li>Os arquivos extras utilizados na animação (como imagens, vídeos, scripts, audios etc) não podem ter caracteres especiais no nome do arquivo, como "ç, ã, é, {, %". Os únicos caracteres especiais aceitos são: _ (underline), - (hífem) e . (ponto).</li>
+		<li>Sempre priorizar a cor do curso, quando for utilizar muitos elementos procure utilizar estes elementos com vários tons semelhantes à cor do curso.</li>
+	</ul>
+</p>
+<h3>
+	Informações gerais Adobe Edge Animate
+</h3>
+<div class="row">
+	<div class="col-md-8">
+		<p>
+			A maioria dos símbolos, como botões, cards etc. deve ser alterado a cor do mesmo para a cor do curso correspondente, para fazer isso você deve deve "entrar" no símbolo (Você pode fazer isso clicando duas vezes nele), e encontrar um objeto no menu <i>Elements</i> (que geralmente fica no lado direito, caso ele não esteja lá você pode ativá-lo abrindo o menu <i>Window</i> e em seguida em <i>Elements</i>) chamado de <i>Cor_do_curso</i> e selecioná-lo, como mostra a figura a seguir:
+		</p>
+	</div>
+	<div class="col-md-4">
+		<center>
+			<img src="images/elements_cor_do_curso.png" />
+		</center>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-8">
+		<p>
+			Após isso, você altera a cor dele no menu <i>Properties</i> (geralmente ele fica do lado esquerdo, caso ele não esteja lá, você pode ativá-lo abrindo o menu <i>Window</i> e em seguida em <i>Properties</i>) na aba <i>Color</i>. A propriedade correta da cor é a primeira opção, como mostra a figura a seguir:
+		</p>
+	</div>
+	<div class="col-md-4">
+		<center>
+			<img src="images/color_cor_do_curso.png" />
+		</center>
+	</div>
+</div>
+<h3>
+	Importando símbolos Adobe Edge Animate
+</h3>
+<p>
+	Para realizar a importação dos símbolos, você deve primeiramente localizar o menu <i>Library</i> que fica geralmente do lado direito da tela. Caso você não encontre ele, clique no menu <i>Window</i> e em seguida em <i>Library</i>.
+</p>
+<div class="row">
+	<div class="col-md-8">
+		<p>
+			Após isso, localize a aba que está escrito <i>Symbols</i>, agora clique no ícone do lado direito semelhante a um &plus;, e clique na opção <i>Import symbols...</i> como mostra a figura a seguir:
+		</p>
+	</div>
+	<div class="col-md-4">
+		<center>
+			<img src="images/import_symbol.png" />
+		</center>
+	</div>
+</div>
+<p>
+	Após isso, selecione o símbolo a ser importado e clique em <i>Abrir</i>.
+</p>
+<h3>
+	Exportando símbolos Adobe Edge Animate
+</h3>
+<p>
+	Caso seja necessário exportar algum símbolo para você utilizar em outra animação ou outra pessoa utilizá-lo, você deve primeiramente localizar o menu <i>Library</i> que fica geralmente do lado direito da tela. Caso você não encontre ele, clique no menu <i>Window</i> e em seguida em <i>Library</i>.
+</p>
+<div class="row">
+	<div class="col-md-8">
+		<p>
+			Após isso, localize o símbolo que você deseja exportá-lo, clique com o botão direito nele e clique na opção <i>Export...</i>, como mostra a figura a seguir:
+		</p>
+	</div>
+	<div class="col-md-4">
+		<center>
+			<img src="images/export_symbol.png" />
+		</center>
+	</div>
+</div>
+<p>
+	 Após isso selecione o local que deseja exportar o símbolo e clique em <i>Salvar</i>.
+</p>
+<h3>Animações linear X ease in/out</h3>
+<div class="row">
+	<div class="col-md-8">
+		<p>
+			Existe uma diferença sutil nas animações, mas que ao passar o olho identificamos nitidamente qual é mais atraente aos olhos de quem os vê. Estas são as animações mais suavisadas, ou aqui chamadas de <i>easing</i>. Na maior parte das animações simplesmente vamos criando-as sem ao menos ver que existe esta opção de nas animações. Esta opção é encontrada no canto inferior da tela, próximo à linha do tempo, logo ao lado esquerdo dos 0 segundos da animação, como mostra a figura a seguir.
+		</p>
+	</div>
+	<div class="col-md-4">
+		<center>
+			<img src="images/edge_easing.png" />
+		</center>
+	</div>
+</div>
+<p>
+	É sempre mais agradável utilizar o EaseInOut do Adobe Edge Animate, segue um exemplo de como fica a comparção com o efeito linear:
+</p>
+<center>
+	<iframe src="edges/linear_easeInOut/linear_easeInOut.html" style="border:none; width: 150px; height: 170px">
+	</iframe>
+</center>

@@ -1,0 +1,14 @@
+[0315/150048:ERROR:renderer_main.cc(226)] Running without renderer sandbox
+[0315/150049:ERROR:renderer_main.cc(226)] Running without renderer sandbox
+[0315/150049:ERROR:renderer_main.cc(226)] Running without renderer sandbox
+[0315/150050:INFO:CONSOLE(0)] "event.returnValue is deprecated. Please use the standard event.preventDefault() instead.", source:  (0)
+[0315/150112:ERROR:renderer_main.cc(226)] Running without renderer sandbox
+[0315/150143:ERROR:renderer_main.cc(226)] Running without renderer sandbox
+[0315/150155:ERROR:renderer_main.cc(226)] Running without renderer sandbox
+[0315/150205:ERROR:renderer_main.cc(226)] Running without renderer sandbox
+[0315/150220:ERROR:renderer_main.cc(226)] Running without renderer sandbox
+[0315/150247:ERROR:renderer_main.cc(226)] Running without renderer sandbox
+[0315/154804:ERROR:renderer_main.cc(226)] Running without renderer sandbox
+[0315/160103:ERROR:ipc_channel_win.cc(405)] pipe error: 232
+[0315/160103:ERROR:ipc_channel_win.cc(132)] pipe error: 109
+[0315/160103:ERROR:ipc_channel_win.cc(132)] pipe error: 109

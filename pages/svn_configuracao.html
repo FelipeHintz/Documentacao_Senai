@@ -1,0 +1,47 @@
+<h1> Configuração das pastas </h1>
+<p>
+	Antes de tudo deve ser feito a configuração inicial das pastas do SVN (chamamos de repositórios). Para fazer isso, primeiramente você deve ter o programa <i>TortoiseSVN</i> instalado. Peça para o suporte instalar o software, para agilizar o processo já faça o download do software para que eles possam instalá-lo: <a href="http://bit.ly/200Z3Jl" target="_blank">http://bit.ly/200Z3Jl</a>
+</p>
+
+<h3>
+	Criação das pastas
+</h3>
+<p>
+	Após isso, deve ser criado as pastas, isso é feito normalmente como sempre fazemos (botão direito - Novo - Pasta), mas recomendamos criar com algumas regras. Primeiramente crie uma pasta no seu D: (abrindo o Meu computador, também pode ser que não exista um D:, as vezes pode ser que seja outra letra, como E:, ou tenha somente o C:) chamado de "Desenvolvimento AVA" e outra chamada "Desenvolvimento LD".
+</p>
+<p>
+	Dentro destas pastas, deverão conter as pastas de cada curso, que recomendamos que tenham os seguintes nomes:
+</p>
+<div id="links_pastas">
+
+</div>
+<script>
+	$("#links_pastas").load("pages/svn_links_pastas.html");
+</script>
+<div class="row">
+	<div class="col-md-8">
+		<p>
+			Após a criar estas pastas (ou somente as que você precisa, para poupar tempo) deverá ser feito o <i>checkout</i> das mesmas. Para fazer isso, você deve clicar com o botão direito na pasta correspondente e clicar na opção <i>SVN Checkout...</i>, como mostra a figura a seguir:
+		</p>
+	</div>
+	<div class="col-md-4">
+		<center>
+			<img src="images/svn_checkout_botao_direito.png" />
+		</center>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-6">
+		<p>
+			Após isso, abrirá uma janela para fazer o <i>Checkout</i> do repositório. No primeiro campo de texto você insere o endereço das pastas. Caso queira ver todos os links disponível, acesse o menu <i>SVN</i> desta documentação e em seguida em  <i>Endereços dos projetos</i> ou <a href="javascript:go('svn_links')" >clique aqui</a>.
+		</p>
+		<p>
+			Após colocar o endereço no campo correto, como mostra a figura a seguir, clique em <i>OK</i> nesta janela. Agora ele começará a buscar todos os arquivos do servidor deste curso para o seu computador, dependendo do tamanho do projeto este processo poderá demorar um pouco. Assim que terminar, clique em <i>OK</i> para fechar a janela e estará pronto a configuração desta pasta. Você deve fazer este processo para cada pasta que deseja trabalhar com seu endereço correspondente.
+		</p>
+	</div>
+	<div class="col-md-6">
+		<center>
+			<img src="images/svn_checkout.png" />
+		</center>
+	</div>
+</div>
