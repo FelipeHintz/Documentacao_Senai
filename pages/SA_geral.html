@@ -159,7 +159,12 @@ for (var i = 0; i < videos.length; i++)
 				<code>
 var simbolos = sym.getChildSymbols();
 for (var i = 0; i < simbolos.length; i++) {
-	if (simbolos[i].name != "Progresso" && simbolos[i].name != "Symbol_1")
+	var temp = false;
+	for (var x = 0; x < simbolosIgnorar.length; x++) {
+		if (simbolos[i].name == simbolosIgnorar[x])
+		temp = true;
+	}
+	if (!temp)
 	simbolos[i].stop();
 }
 var videos = $("video")
