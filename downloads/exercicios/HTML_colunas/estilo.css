@@ -1,0 +1,140 @@
+body {
+	width: 600px;
+	height: 400px;
+	font-size: 13px;
+    line-height: 20px;
+	font-family: Verdana, Geneva, sans-serif;
+}
+
+.origin-point {
+	background-color: #416AA8;
+	width: 10px;
+	-webkit-border-radius: 100%;
+	-moz-border-radius: 100%;
+	border-radius: 100%;
+	margin-top: 30px;
+	margin-left: 5px;
+	vertical-align: middle;
+	height: 10px;
+	cursor: pointer;
+}
+
+.end-point {
+	background-color: #fff;
+	height: 20px;
+	width: 20px;
+	-webkit-border-radius: 100%;
+	-moz-border-radius: 100%;
+	border-radius: 100%;
+	margin-top: 25px;
+	margin-right: 5px;
+	vertical-align: middle;
+	cursor: pointer;
+	float:left;
+}
+
+.ponto-visivel {
+	background-color: #416AA8;
+	height: 10px;
+	width: 10px;
+	-webkit-border-radius: 100%;
+	-moz-border-radius: 100%;
+	border-radius: 100%;
+	margin-top: 5px;
+	margin-left: 5px;
+	cursor: pointer;
+	float:left;
+}
+
+#new-link-line {
+	position: absolute;
+	width: 3px;
+	background-color: #416AA8;
+	z-index: 100;
+	-webkit-transform-origin: top left;
+	-moz-transform-origin: top left;
+	-o-transform-origin: top left;
+	-ms-transform-origin: top left;
+	transform-origin: top left;
+}
+
+#clone:hover {
+	background-color: #b9841e;
+}
+
+#clone {
+	position: absolute;
+	width: 3px;
+	background-color: #416AA8;
+	z-index: 100;
+	-webkit-transform-origin: top left;
+	-moz-transform-origin: top left;
+	-o-transform-origin: top left;
+	-ms-transform-origin: top left;
+	transform-origin: top left;
+	-webkit-transition: background-color 0.5s ease-in-out;
+	-moz-transition: background-color 0.5s ease-in-out;
+	-o-transition: background-color 0.5s ease-in-out;
+	-ms-transition: background-color 0.5s ease-in-out;
+	transition: background-color 0.5s ease-in-out;
+}
+
+#iniciais{
+	width: 225px;
+	float:left;
+}
+#finais{
+	width: 300px;
+	float:right;
+}
+
+.container {
+	display: table;
+	width: 100%;
+	height: 70px;
+	margin-bottom: 5px;
+	padding: 0px;
+}
+
+.texto {
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+	padding: 5px;
+	width: 95%;
+	background-color: #416AA8;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	color: black;
+}
+
+.noselect {
+	color: white;
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+.popover {
+	color: black;
+}
+
+a {
+	text-decoration: none;
+	color: white;
+}
+
+a:hover {
+	text-decoration: none;
+	color: white;
+}
+
+a:visited {
+	text-decoration: none;
+	color: white;
+}

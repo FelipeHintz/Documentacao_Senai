@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ca&ccedil;a Palavras</title>
+    <meta charset="utf-8">
+	<script src="sweetalert.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="sweetalert.css">
+    <script>
+
+		var letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+		var pos = [];
+		var size = 440;
+		var _puzzle = [];
+		
+		/*
+			- Como encontrar as pavalavras:
+			
+				o caça palavras esta dividido em 22 colunas com 20 linhas
+				para encontrar a palavra é so buscar por seu numero.
+				Exemplo: "start":160 - linha 8 coluna 7
+				160 / 22 = 7,27..
+				
+				linha = 7 + 1 = 8
+				coluna = 160 - (22 * 7) + 1 = 7
+				
+		*/
+		
+		var _words = [
+		{"word":"PALAVRA1", "direction":"E", "start":160},
+		{"word":"PALAVRA2", "direction":"S", "start":0},
+		{"word":"PALAVRA3", "direction":"SE", "start":100},
+		{"word":"PALAVRA4", "direction":"N", "start":439},
+		{"word":"PALAVRA5", "direction":"E", "start":320}
+		]
+		
+		/*
+		direction = sentido palavra
+		N - baixo para cima
+		NE - diagonal baixo para direita cima <- esta falhando na verificacao - não sei o motivo
+		E - direita para esquerda
+		SE - diagonal cima para direita baixo <- esta falhando na verificacao - não sei o motivo
+		S - cima para baixo
+		SW - diagonal cima para esquerda baixo <- esta falhando na verificacao - não sei o motivo
+		W - esquerda para direita
+		NW - diagonal baixo para esquerda cima <- esta falhando na verificacao - não sei o motivo
+		*/
+		
+		for (var aamr = 0; aamr < size; aamr++) {
+			_puzzle.push(""+getRandomLetter());
+		}
+		
+		function getRandomLetter() {
+			return letters[Math.floor(Math.random() * letters.length)];
+		}
+		
+		for (var i = 0; i < _words.length; i++) {
+			_words[i].end = _words[i].start;
+			displayWord(_words[i]);
+			pos[i] = { "start": _words[i].start, "end": _words[i].end };
+			//_puzzle[i] = _words[i].word;
+			/*$("._words").append("<span class='" + (i) + "'>" +  
+								_words[i].word + "</span>");*/	
+		}
+		
+		function displayWord(w) {
+			for (var j = 0; j < w.word.length; j++){
+				if (w.direction == "N") {
+					_puzzle[w.end] = w.word[j];
+					if (j + 1 != w.word.length) w.end -= 22;
+				}
+				if (w.direction == "NE") {
+					_puzzle[w.end] = w.word[j];
+					if (j + 1 != w.word.length) w.end -= 21;
+				}
+				if (w.direction == "E") {
+					_puzzle[w.end] = w.word[j];
+					if (j + 1 != w.word.length) w.end += 1;
+				}
+				if (w.direction == "SE") {
+					_puzzle[w.end] = w.word[j];
+					if (j + 1 != w.word.length) w.end += 23;
+				}
+				if (w.direction == "S") {
+					_puzzle[w.end] = w.word[j];
+					if (j + 1 != w.word.length) w.end += 22;
+				}
+				if (w.direction == "SW") {
+					_puzzle[w.end] = w.word[j];
+					if (j + 1 != w.word.length) w.end += 21;
+				}
+				if (w.direction == "W") {
+					_puzzle[w.end] = w.word[j];
+					if (j + 1 != w.word.length) w.end -= 1;
+				}
+				if (w.direction == "NW") {
+					_puzzle[w.end] = w.word[j];
+					if (j + 1 != w.word.length) w.end -= 23;
+				}
+			}
+		}
+		
+        var _canvas;
+        var _stage;
+		var armazenamento = [];
+		var acerto = 0;
+					   
+        var _letters = [];
+        var _puzzleWords = [];
+        var _highlightedWord = [];
+		
+		//CORRECAO
+		var anterior;
+
+        var PUZZLE_SIZE = 22;
+        var LETTER_SIZE = 20;
+        var LETTER_SPACING = 0;
+        var BOARD_X = 10;
+        var BOARD_Y = 10;
+        var WORDS_X = 460;
+        var WORDS_Y = 50;
+
+        var _letterStart = null;
+        var _letterLast = null;
+        var _wordsFound = 0;
+        var _gameWon = false;
+
+        function init(){
+            _canvas = document.getElementById('canvas');
+            _stage  = _canvas.getContext('2d');
+            var i;
+            var obj;
+            var cnt = 0;
+            var x = 0;
+            var y = 0;
+            var xPos = 0;
+            var yPos = 0;
+            var row = 0;
+            for(i = 0;i < PUZZLE_SIZE * 20;i++){
+                obj = {};
+                //obj.letter = _letterArr[Math.floor(Math.random() * _letterArr.length)];
+                obj.letter = _puzzle[i];
+                obj.key = i;
+                obj.size = LETTER_SIZE;
+                obj.x = xPos + BOARD_X;
+                obj.y = yPos + BOARD_Y;
+                obj.top = obj.y;
+                obj.right = obj.x + LETTER_SIZE;
+                obj.bottom = obj.y + LETTER_SIZE;
+                obj.left = obj.x;
+                obj.column = cnt;
+                obj.row = row;
+                obj.highlight = false;
+                _letters.push(obj);
+                cnt++;
+                xPos += (LETTER_SIZE + LETTER_SPACING);
+                if(cnt == PUZZLE_SIZE){
+                    cnt = 0;
+                    xPos = 0;
+                    yPos += (LETTER_SIZE + LETTER_SPACING);
+                    row++;
+                }
+            }
+            //BUILD LETTER OBJECTS
+            for(i = 0;i < _words.length;i++){
+                obj = {};
+                obj.word = _words[i].word;
+                obj.found = false;
+                _puzzleWords.push(obj);
+            }
+            drawBoard();
+            drawWords();
+            initGame();
+        }
+        function initGame(){
+            document.onmousedown = setLetterStart;
+        }
+        function drawBoard(){
+            _stage.clearRect(0,0,800,600);
+            var i;
+            var obj;
+            _stage.strokeStyle = '#000000';
+            _stage.font = "15px Arial";
+            _stage.textAlign = "center";
+            _stage.textBaseline = "middle";
+            for(i = 0;i < _letters.length;i++){
+                obj = _letters[i];
+				if(obj.highlight){
+					_stage.fillStyle = "#D69B09"; //Cor no caça palavra 
+					_stage.fillRect(obj.x, obj.y,LETTER_SIZE,LETTER_SIZE);
+				}
+                _stage.strokeRect(obj.x, obj.y,obj.size,obj.size);
+                _stage.fillStyle = obj.highlight ? "#ffffff" : '#000000';
+				
+                _stage.fillText(obj.letter, obj.x + (LETTER_SIZE / 2), obj.y + (LETTER_SIZE / 2));
+				
+            }
+        }
+        function drawWords(){
+            var i;
+            var word;
+            for(i = 0;i < _puzzleWords.length;i++){
+                word =  _puzzleWords[i];
+                yPos = WORDS_Y + (i * 25);
+                _stage.fillStyle = word.found ? "#FFAA00" : "#000000"; //Cor palavra encontrada : palavra não encontrada
+				
+                _stage.textAlign = "left";
+                _stage.textBaseline = "top";
+                _stage.fillText(word.word, WORDS_X,yPos);
+                _stage.fillText(word.word, WORDS_X,yPos);
+            }
+            if(_gameWon){
+                yPos += 50;
+                _stage.fillStyle = "#009900";
+                _stage.fillText("VOCÊ VENCEU!", WORDS_X,yPos);
+				swal({
+					title: "Resposta correta!",
+					text: "Resposta correta!",
+					confirmButtonText: "Fechar",
+					html: true,
+					type: "success",
+				})
+            }
+        }
+        function setLetterStart(e){
+            _letterStart = getLetterTouched(e);
+            document.onmousedown = null;
+            document.onmousemove = dragListen;
+            document.onmouseup = checkWord;
+        }
+        function dragListen(e){
+            _letterLast = getLetterTouched(e);
+			console.log(_letterLast)
+            factorString();
+        }
+        function getLetterTouched(e){
+            var mouseX;
+            var mouseY;
+            if(e.layerX || e.layerX == 0){
+                mouseX = e.layerX - _canvas.offsetLeft;
+                mouseY = e.layerY - _canvas.offsetTop;
+            }
+            else if(e.offsetX || e.offsetX == 0){
+                mouseX = e.offsetX - _canvas.offsetLeft;
+                mouseY = e.offsetY - _canvas.offsetTop;
+            }
+            var obj = null;
+            for(i = 0;i < _letters.length;i++){
+                obj = _letters[i];
+                if(mouseY > obj.bottom || mouseY < obj.top || mouseX < obj.x || mouseX > obj.right){
+                    continue;
+                }
+                else{
+                    return obj;
+                    break;
+                }
+            }
+            return obj;
+        }
+        function factorString(){
+            _highlightedWord = [];
+            drawBoard();
+            drawWords();
+            var startPoint = {x:_letterStart.x, y:_letterStart.y};
+            var endPoint = {x:_letterLast.x, y:_letterLast.y};
+            ///DRAW ON START AND END
+            _stage.save();
+            _stage.fillStyle = "#00ff00";
+            _stage.globalAlpha = 0.3;
+            _stage.fillRect(_letterStart.x, _letterStart.y,LETTER_SIZE,LETTER_SIZE);
+            _stage.fillRect(_letterLast.x, _letterLast.y,LETTER_SIZE,LETTER_SIZE);
+            _stage.restore();
+            if(startPoint.y == endPoint.y){
+                drawRow();
+            }
+            else if(startPoint.x == endPoint.x){
+                drawColumn();
+            }
+            else if(startPoint.y < endPoint.y){
+                drawDigonalDown();
+            }
+            else if(startPoint.y > endPoint.y){
+                drawDigonalUp();
+            }
+        }
+        function drawRow(){
+            _stage.save();
+            _stage.fillStyle = "#00ff00";
+            _stage.globalAlpha = 0.3;
+            var min;
+            var max;
+            var i;
+            var slot;
+            min = _letterStart.key;
+            max = _letterLast.key;
+            if(min < max){
+                for(i = min;i < max + 1;i++){
+                    slot = _letters[i];
+                    _stage.fillRect(slot.x, slot.y,LETTER_SIZE,LETTER_SIZE);
+                    _highlightedWord.push(slot);
+                }
+            }
+            else{
+                for(i = min;i > max - 1;i--){
+                    slot = _letters[i];
+                    _stage.fillRect(slot.x, slot.y,LETTER_SIZE,LETTER_SIZE);
+                    _highlightedWord.push(slot);
+                }
+            }
+            _stage.restore();
+        }
+        function drawColumn(){
+            _stage.save();
+            _stage.fillStyle = "#00ff00";
+            _stage.globalAlpha = 0.3;
+            var min;
+            var max;
+            var i;
+            var slot;
+            min = _letterStart.key;
+            max = _letterLast.key;
+            if(min < max){
+                for(i = min;i < max + 1;i += PUZZLE_SIZE){
+                    slot = _letters[i];
+                    _stage.fillRect(slot.x, slot.y,LETTER_SIZE,LETTER_SIZE);
+                    _highlightedWord.push(slot);
+                }
+            }
+            else{
+                for(i = min;i > max - 1;i -= PUZZLE_SIZE){
+                    slot = _letters[i];
+                    _stage.fillRect(slot.x, slot.y,LETTER_SIZE,LETTER_SIZE);
+                    _highlightedWord.push(slot);
+                }
+            }
+            _stage.restore();
+        }
+        function drawDigonalDown(){
+            ///CHECK IF LEGIT
+            var rowDiff = _letterStart.row - _letterLast.row;
+            var colDiff = _letterStart.column - _letterLast.column;
+            //FORCE POSITIVE
+            rowDiff = rowDiff < 0 ? rowDiff * -1 : rowDiff;
+            colDiff = colDiff < 0 ? colDiff * -1 : colDiff;
+            if(rowDiff != colDiff){
+                return;
+            }
+            ///NOW FILL THE SLOTS
+            _stage.save();
+            _stage.fillStyle = "#00ff00";
+            _stage.globalAlpha = 0.3;
+            var min;
+            var max;
+            var i;
+            var slot;
+            min = _letterStart.key;
+            max = _letterLast.key;
+            if(_letterStart.x < _letterLast.x){
+                for(i = min;i < max + 1;i += (PUZZLE_SIZE + 1)){
+                    slot = _letters[i];
+                    _stage.fillRect(slot.x, slot.y,LETTER_SIZE,LETTER_SIZE);
+                    _highlightedWord.push(slot);
+                }
+            }
+            else{
+                for(i = min;i < max + 1;i += (PUZZLE_SIZE - 1)){
+                    slot = _letters[i];
+                    _stage.fillRect(slot.x, slot.y,LETTER_SIZE,LETTER_SIZE);
+                    _highlightedWord.push(slot);
+                }
+            }
+            _stage.restore();
+        }
+        function drawDigonalUp(){
+            ///CHECK IF LEGIT
+            var rowDiff = _letterStart.row - _letterLast.row;
+            var colDiff = _letterStart.column - _letterLast.column;
+            //FORCE POSITIVE
+            rowDiff = rowDiff < 0 ? rowDiff * -1 : rowDiff;
+            colDiff = colDiff < 0 ? colDiff * -1 : colDiff;
+            if(rowDiff != colDiff){
+                return;
+            }
+            ///NOW FILL THE SLOTS
+            _stage.save();
+            _stage.fillStyle = "#00ff00";
+            _stage.globalAlpha = 0.3;
+            var min;
+            var max;
+            var i;
+            var slot;
+            min = _letterStart.key;
+            max = _letterLast.key;
+            if(_letterStart.x < _letterLast.x){
+                for(i = min;i > max - 1;i -= (PUZZLE_SIZE - 1)){
+                    slot = _letters[i];
+                    _stage.fillRect(slot.x, slot.y,LETTER_SIZE,LETTER_SIZE);
+                    _highlightedWord.push(slot);
+                }
+            }
+            else{
+                for(i = min;i > max - 1;i -= (PUZZLE_SIZE + 1)){
+                    slot = _letters[i];
+                    _stage.fillRect(slot.x, slot.y,LETTER_SIZE,LETTER_SIZE);
+                    _highlightedWord.push(slot);
+                }
+            }
+            _stage.restore();
+        }
+        function checkWord(){
+            document.onmousemove = null;
+            document.removeEventListener(MouseEvent.mousemove,dragListen);
+            var i;
+            var j;
+            var word;
+            var highlight;
+			var highlight2;
+			var reverse = [];
+			var reverse2;
+			for(teste = 0;teste < _highlightedWord.length;teste++){
+				reverse[teste] = _highlightedWord[teste].letter;
+			}
+			reverse = reverse.reverse();
+            outter:for(i = 0;i < _puzzleWords.length;i++){
+                word = _puzzleWords[i];
+                match = word.word;
+                highlight = '';
+				highlight2 = '';
+                inner:for(j = 0;j < _highlightedWord.length;j++){
+                    highlight += _highlightedWord[j].letter;
+					highlight2 += reverse[j];
+                }
+                if(highlight == match || highlight2 == match){
+					for (var xyz = 0; xyz < armazenamento.length; xyz++){
+						if (armazenamento[xyz] == match){
+							acerto = 1;
+						}
+					}
+					if (acerto == 0) {
+						word.found = true;
+						armazenamento.push(match)
+						updateFoundLetters();
+					} else {
+						acerto = 0;
+					}
+					break outter;
+                }
+                highlight = '';
+				highlight2 = '';
+                inner2:for(j = 0;j < reverse.length;j++){
+                    highlight += reverse[j];
+					highlight2 += _highlightedWord[j].letter;
+                }
+                
+				//CORRECAO
+				if(highlight==anterior){
+					break outter;
+				}
+				
+				if(highlight == match){
+                    word.found = true;
+                    updateFoundLetters();
+					
+					//CORRECAO
+					anterior=highlight;
+                    break outter;
+                }
+            }
+            drawBoard();
+            drawWords();
+            if(!_gameWon){
+                document.onmousedown = setLetterStart;
+            }
+        }
+        function updateFoundLetters(){
+            _wordsFound ++;
+            var i;
+            var word;
+            for(i = 0;i < _highlightedWord.length;i++){
+                word = _highlightedWord[i];
+                word.highlight = true;
+            }
+            if(_wordsFound == (_puzzleWords.length) ){
+                _gameWon = true;
+            }
+        }
+        function trace(msg){
+        }
+
+    </script>
+    
+    <style type="text/css">
+		* {
+			padding: 0;
+            margin: 0;
+		}
+    </style>
+    
+    
+</head>
+
+<body onload="init()" >
+    
+        <canvas id="canvas" width="630" height="420" style="border: 1px solid #000;background-color: white">
+            CA&Ccedil;A PALAVRAS
+        </canvas>
+    
+</body>
+</html>

@@ -1,0 +1,63 @@
+[1024/110553:ERROR:gl_surface_egl.cc(133)] eglInitialize failed with error UNKNOWN
+[1024/110553:ERROR:gl_surface_win.cc(97)] GLSurfaceEGL::InitializeOneOff failed.
+[1024/110604:ERROR:renderer_main.cc(226)] Running without renderer sandbox
+[1024/110604:ERROR:renderer_main.cc(226)] Running without renderer sandbox
+[1024/110604:ERROR:renderer_main.cc(226)] Running without renderer sandbox
+[1024/110605:INFO:CONSOLE(0)] "event.returnValue is deprecated. Please use the standard event.preventDefault() instead.", source:  (0)
+[1024/110619:ERROR:renderer_main.cc(226)] Running without renderer sandbox
+[1024/110648:INFO:CONSOLE(0)] "Uncaught SyntaxError: Unexpected token ;,19", source: about:docKey-5 (0)
+[1024/110648:INFO:CONSOLE(19)] "Uncaught SyntaxError: Unexpected token ;", source:  (19)
+[1024/110653:INFO:CONSOLE(0)] "Uncaught SyntaxError: Unexpected token ;,19", source: about:docKey-6 (0)
+[1024/110653:INFO:CONSOLE(19)] "Uncaught SyntaxError: Unexpected token ;", source:  (19)
+[1024/110656:INFO:CONSOLE(0)] "Uncaught SyntaxError: Unexpected token ;,19", source: about:docKey-7 (0)
+[1024/110656:INFO:CONSOLE(19)] "Uncaught SyntaxError: Unexpected token ;", source:  (19)
+[1024/110659:INFO:CONSOLE(0)] "Uncaught SyntaxError: Unexpected token ;,19", source: about:docKey-8 (0)
+[1024/110659:INFO:CONSOLE(19)] "Uncaught SyntaxError: Unexpected token ;", source:  (19)
+[1024/110702:INFO:CONSOLE(0)] "Uncaught SyntaxError: Unexpected token ;,19", source: about:docKey-9 (0)
+[1024/110702:INFO:CONSOLE(19)] "Uncaught SyntaxError: Unexpected token ;", source:  (19)
+[1024/110706:INFO:CONSOLE(0)] "Uncaught SyntaxError: Unexpected token ;,19", source: about:docKey-10 (0)
+[1024/110706:INFO:CONSOLE(19)] "Uncaught SyntaxError: Unexpected token ;", source:  (19)
+[1024/110709:INFO:CONSOLE(0)] "Uncaught SyntaxError: Unexpected token ;,19", source: about:docKey-11 (0)
+[1024/110709:INFO:CONSOLE(19)] "Uncaught SyntaxError: Unexpected token ;", source:  (19)
+[1024/110711:INFO:CONSOLE(0)] "Uncaught SyntaxError: Unexpected token ;,19", source: about:docKey-12 (0)
+[1024/110711:INFO:CONSOLE(19)] "Uncaught SyntaxError: Unexpected token ;", source:  (19)
+[1024/111127:INFO:CONSOLE(0)] "Uncaught SyntaxError: Unexpected token ;,19", source: about:docKey-13 (0)
+[1024/111127:INFO:CONSOLE(19)] "Uncaught SyntaxError: Unexpected token ;", source:  (19)
+[1024/111205:INFO:CONSOLE(0)] "Uncaught SyntaxError: Unexpected token ;,19", source: about:docKey-14 (0)
+[1024/111205:INFO:CONSOLE(19)] "Uncaught SyntaxError: Unexpected token ;", source:  (19)
+[1024/111205:INFO:CONSOLE(0)] "Uncaught SyntaxError: Unexpected token ;,19", source: about:docKey-15 (0)
+[1024/111205:INFO:CONSOLE(19)] "Uncaught SyntaxError: Unexpected token ;", source:  (19)
+[1024/111218:INFO:CONSOLE(0)] "Uncaught SyntaxError: Unexpected token ;,19", source: about:docKey-16 (0)
+[1024/111218:INFO:CONSOLE(19)] "Uncaught SyntaxError: Unexpected token ;", source:  (19)
+[1024/111218:INFO:CONSOLE(0)] "Uncaught SyntaxError: Unexpected token ;,19", source: about:docKey-17 (0)
+[1024/111218:INFO:CONSOLE(19)] "Uncaught SyntaxError: Unexpected token ;", source:  (19)
+[1024/111428:INFO:CONSOLE(0)] "Uncaught SyntaxError: Unexpected token ;,19", source: about:docKey-18 (0)
+[1024/111428:INFO:CONSOLE(19)] "Uncaught SyntaxError: Unexpected token ;", source:  (19)
+[1024/111441:INFO:CONSOLE(0)] "Uncaught SyntaxError: Unexpected token ;,19", source: about:docKey-19 (0)
+[1024/111441:INFO:CONSOLE(19)] "Uncaught SyntaxError: Unexpected token ;", source:  (19)
+[1027/154743:ERROR:gl_surface_egl.cc(133)] eglInitialize failed with error UNKNOWN
+[1027/154743:ERROR:gl_surface_win.cc(97)] GLSurfaceEGL::InitializeOneOff failed.
+[1027/154754:ERROR:renderer_main.cc(226)] Running without renderer sandbox
+[1027/154754:ERROR:renderer_main.cc(226)] Running without renderer sandbox
+[1027/154755:ERROR:renderer_main.cc(226)] Running without renderer sandbox
+[1027/154801:INFO:CONSOLE(0)] "event.returnValue is deprecated. Please use the standard event.preventDefault() instead.", source:  (0)
+[1027/154840:INFO:CONSOLE(1)] "ReferenceError: EdgeDOM is not defined
+    at eval (eval at <anonymous> (about:blank:0:45), <anonymous>:1:7)
+    at about:blank:0:45", source:  (1)
+[1027/154902:ERROR:dns_config_service_win.cc(739)] DNS config watch failed.
+[1027/155230:ERROR:renderer_main.cc(226)] Running without renderer sandbox
+[1027/155251:ERROR:ipc_channel_win.cc(132)] pipe error: 109
+[1027/155251:INFO:CONSOLE(1)] "ReferenceError: EdgeDOM is not defined
+    at eval (eval at <anonymous> (about:blank:0:45), <anonymous>:1:7)
+    at about:blank:0:45", source:  (1)
+[1027/172454:ERROR:renderer_main.cc(226)] Running without renderer sandbox
+[1027/173339:INFO:CONSOLE(0)] "Uncaught SyntaxError: Unexpected token ILLEGAL,106", source: about:docKey-51 (0)
+[1027/173339:INFO:CONSOLE(106)] "Uncaught SyntaxError: Unexpected token ILLEGAL", source:  (106)
+[1027/173352:INFO:CONSOLE(0)] "Uncaught SyntaxError: Unexpected token ),106", source: about:docKey-64 (0)
+[1027/173352:INFO:CONSOLE(106)] "Uncaught SyntaxError: Unexpected token )", source:  (106)
+[1027/173506:INFO:CONSOLE(0)] "Uncaught SyntaxError: Unexpected token *,115", source: about:docKey-73 (0)
+[1027/173506:INFO:CONSOLE(115)] "Uncaught SyntaxError: Unexpected token *", source:  (115)
+[1027/173836:ERROR:ipc_channel_win.cc(132)] pipe error: 109
+[1027/173836:INFO:CONSOLE(1)] "ReferenceError: EdgeDOM is not defined
+    at eval (eval at <anonymous> (about:blank:0:45), <anonymous>:1:7)
+    at about:blank:0:47", source:  (1)

@@ -1,0 +1,90 @@
+<html>
+	<head>
+		<script src="sweetalert.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="sweetalert.css">
+		<script src="jquery-3.2.1.min.js"></script>
+		<script src="script.js"></script>
+		<meta charset=utf-8 />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="estilo.css">
+	</head>
+	<body class="noselect">
+		<div id="iniciais">
+		
+			<div class="container">
+				<div class="texto noselect">
+					Texto 3
+				</div>
+				<div id="pontoOrigem1" class="origin-point"></div>
+			</div>
+			
+			<div class="container">
+				<div class="texto noselect">
+					Texto 2
+				</div>
+				<div id="pontoOrigem2" class="origin-point"></div>
+			</div>
+			
+			<div class="container">
+				<div class="texto noselect">
+					Texto 1
+				</div>
+				<div id="pontoOrigem3" class="origin-point"></div>
+			</div>
+			
+			<div class="container">
+				<div class="texto noselect">
+					Texto 4
+				</div>
+				<div id="pontoOrigem4" class="origin-point"></div>
+			</div>
+			
+		</div>
+		<div id="finais">
+			
+			<div class="container">
+				<div id="pontoFinal3" class="end-point">
+					<div id="pontoFinal3" class="ponto-visivel"></div>
+				</div>
+				<div class="texto noselect">
+					<a href="#" data-toggle="popover" data-trigger="hover" data-placement="left" data-content="Texto 1">Conceito 1</a>
+				</div>
+			</div>
+				
+			<div class="container">
+				<div id="pontoFinal2" class="end-point">
+					<div id="pontoFinal2" class="ponto-visivel"></div>
+				</div>
+				<div class="texto noselect">
+					<a href="#" data-toggle="popover" data-trigger="hover" data-placement="left" data-content="Texto 2">Conceito 2</a>
+				</div>
+			</div>
+			
+			<div class="container">
+				<div id="pontoFinal1" class="end-point">
+					<div id="pontoFinal1" class="ponto-visivel"></div>
+				</div>
+				<div class="texto noselect">
+					<a href="#" data-toggle="popover" data-trigger="hover" data-placement="left" data-content="Texto 3">Conceito 3</a>
+				</div>
+			</div>
+			
+			<div class="container">
+				<div id="pontoFinal4" class="end-point">
+					<div id="pontoFinal4" class="ponto-visivel"></div>
+				</div>
+				<div class="texto noselect">
+					<a href="#" data-toggle="popover" data-trigger="hover" data-placement="left" data-content="Texto 4">Conceito 4</a>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script>
+		$(document).ready(function(){
+			$('[data-toggle="popover"]').popover(); 
+		});
+	</script>
+	<script src="script.js"></script>
+</html>
